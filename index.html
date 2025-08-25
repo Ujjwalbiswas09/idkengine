@@ -1,47 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My 2D Game Engine</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #121212;
-            color: #ffffff;
-            text-align: center;
-        }
-        header {
-            background-color: #1e1e1e;
-            padding: 20px;
-        }
-        header h1 {
-            margin: 0;
-        }
-        main {
-            padding: 20px;
-        }
-        footer {
-            background-color: #1e1e1e;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home – Your Engine Name</title>
+  <meta name="description" content="IDK Engine – A mobile-first 2D Android game engine with a built-in editor app." />
+  <style>
+    :root {
+      --bg: #0b0c10;
+      --card: #111318;
+      --text: #e8ebf1;
+      --muted: #b8c0cc;
+      --accent: #6ae3ff;
+      --ring: #2a3040;
+    }
+    @media (prefers-color-scheme: light) {
+      :root { --bg: #f8fafc; --card: #ffffff; --text: #0b1220; --muted: #4b5563; --accent: #007aff; --ring:#e5e7eb; }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    header { text-align:center; padding: 4rem 1.25rem 2rem; }
+    header h1 { font-size: clamp(2.25rem, 4vw, 3rem); margin-bottom:.5rem; }
+    header p { font-size: 1.1rem; color: var(--muted); max-width: 640px; margin: 0 auto; }
+    .hero-buttons { margin-top:1.5rem; display:flex; justify-content:center; gap:1rem; flex-wrap:wrap; }
+    .btn { appearance:none; border:none; border-radius:12px; font-weight:600; text-decoration:none; display:inline-block; padding:.85rem 1.25rem; cursor:pointer; transition: all .2s ease; }
+    .btn.primary { background: linear-gradient(180deg, var(--accent), rgba(106,227,255,.75)); color:#00202a; }
+    .btn.secondary { background: var(--card); border:1px solid var(--ring); color: var(--text); }
+    .btn:hover { transform: translateY(-2px); }
+
+    section { max-width:1100px; margin:0 auto; padding: 4rem 1.25rem; }
+    h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); margin-bottom:1rem; text-align:center; }
+    .features { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:1.25rem; margin-top:2rem; }
+    .feature { background: var(--card); border:1px solid var(--ring); border-radius:16px; padding:1.25rem; text-align:left; }
+    .feature h3 { margin:.25rem 0 .5rem; }
+    .feature p { color: var(--muted); font-size:.95rem; margin:0; }
+
+    .screenshots { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1rem; margin-top:2rem; }
+    .screenshots img { width:100%; border-radius:12px; border:1px solid var(--ring); box-shadow:0 4px 15px rgba(0,0,0,.3); }
+
+    footer { text-align:center; color:var(--muted); font-size:.85rem; padding:2rem 1.25rem; margin-top:2rem; border-top:1px solid var(--ring); }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My 2D Game Engine</h1>
-    </header>
-    <main>
-        <p>This is a placeholder website for My 2D game engine. Stay tuned for updates!</p>
-        <button onclick="location.href='https://github.com/Ujjwalbiswas09/idkengine/releases/download/version-null/app-release.apk'">Download</button>
-    </main>
-    <footer>
-        <p>&copy; 2025 My 2D Game Engine. All rights reserved.</p>
-    </footer>
+  <header>
+    <h1>Welcome to <span id="engine-name">Your Engine Name</span></h1>
+    <p>The first <strong>2D Android game engine</strong> with a built-in editor. Build, test, and ship your games directly on Android devices.</p>
+    <div class="hero-buttons">
+      <a href="./downloadpage.html" class="btn primary">⬇️ Download</a>
+      <a href="#features" class="btn secondary">✨ Features</a>
+      <a href="#screenshots" class="btn secondary">🖼️ Screenshots</a>
+      <a href="./aboutpage.html" class="btn secondary">ℹ️ About</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="features">
+      <h2>Key Features</h2>
+      <div class="features">
+        <div class="feature">
+          <h3>📱 Mobile-first Development</h3>
+          <p>Create and edit your games entirely on your Android device. No PC required.</p>
+        </div>
+        <div class="feature">
+          <h3>⚡ Optimized 2D Rendering</h3>
+          <p>High-performance rendering with sprites, tilemaps, and particle effects.</p>
+        </div>
+        <div class="feature">
+          <h3>🛠️ Intuitive Tools</h3>
+          <p>Scene editor, prefab system, and event-driven workflow built for efficiency.</p>
+        </div>
+        <div class="feature">
+          <h3>🚀 Easy Export</h3>
+          <p>Generate signed APKs/AABs ready for publishing on the Play Store.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="screenshots">
+      <h2>App Screenshots</h2>
+      <div class="screenshots">
+        <img src="sc3.jpg" alt="Screenshot 1 of engine UI" />
+        <img src="sc2.jpg" alt="Screenshot 2 of scene editor" />
+        <img src="sc1.jpg" alt="Screenshot 3 of project preview" />
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> <span id="brand">Your Engine Name</span>. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const ENGINE_NAME = "IDK Engine";
+    const BRAND = ENGINE_NAME;
+    document.getElementById('engine-name').textContent = ENGINE_NAME;
+    document.getElementById('brand').textContent = BRAND;
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

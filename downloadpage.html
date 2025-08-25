@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Download – Your Engine Name</title>
+  <meta name="description" content="Download Your Engine Name, a lightweight 2D Android game engine with a built-in editor app." />
+  <style>
+    :root {
+      --bg: #0b0c10;
+      --card: #111318;
+      --text: #e8ebf1;
+      --muted: #b8c0cc;
+      --accent: #6ae3ff;
+      --ring: #2a3040;
+    }
+    @media (prefers-color-scheme: light) {
+      :root { --bg: #f8fafc; --card: #ffffff; --text: #0b1220; --muted: #4b5563; --accent: #007aff; --ring:#e5e7eb; }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 4rem 1.25rem; text-align: center; }
+    h1 { font-size: clamp(2rem, 3.2vw, 2.5rem); margin-bottom: .75rem; }
+    .lede { font-size: clamp(1rem, 1.6vw, 1.125rem); color: var(--muted); margin-bottom: 2rem; }
+    .download-card {
+      background: var(--card);
+      border: 1px solid var(--ring);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      display: inline-block;
+      min-width: 300px;
+    }
+    .btn { appearance:none; border:none; border-radius:12px; font-weight:600; text-decoration:none; display:inline-block; padding:.85rem 1.25rem; margin:.5rem; cursor:pointer; transition: all .2s ease; }
+    .btn.primary { background: linear-gradient(180deg, var(--accent), rgba(106,227,255,.75)); color:#00202a; }
+    .btn.secondary { background: var(--card); border:1px solid var(--ring); color: var(--text); }
+    .btn:hover { transform: translateY(-2px); }
+    .release-info { margin-top:1.5rem; color: var(--muted); font-size:.9rem; }
+    footer { margin-top:3rem; text-align:center; color:var(--muted); font-size:.85rem; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <h1>Download <span id="engine-name">Your Engine Name</span></h1>
+    <p class="lede">Get the latest version of our mobile‑first 2D Android game engine. Build, test, and publish your games directly on Android.</p>
+
+    <div class="download-card">
+      <h2>Latest Release</h2>
+      <p><strong>v1.0.0</strong> – Stable</p>
+      <a class="btn primary" href="https://github.com/Ujjwalbiswas09/idkengine/releases/download/version-null/app-release.apk">⬇️ Download APK</a>
+      <a class="btn secondary" href="https://github.com/Ujjwalbiswas09/idkengine/releases">📜 View Changelog</a>
+      <div class="release-info">Released: <span id="release-date">Aug 2025</span></div>
+    </div>
+
+    <footer>
+      <p>© <span id="year"></span> <span id="brand">Your Engine Name</span>. All rights reserved.</p>
+    </footer>
+  </main>
+
+  <script>
+    const ENGINE_NAME = "IDK Engine";
+    const BRAND = ENGINE_NAME;
+    document.getElementById('engine-name').textContent = ENGINE_NAME;
+    document.getElementById('brand').textContent = BRAND;
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
